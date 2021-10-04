@@ -75,6 +75,7 @@ $(document).ready(function () {
     };
 
     function GetInfos() {
+        getInfoNumApp();
         getInfoNumFloors();
         getInfoNumBase();
         getInfoNumElev();
@@ -104,6 +105,7 @@ $(document).ready(function () {
             numberBase: numBase,
             maximumOcc: maxOcc,
             productRange: prodRange,
+            numberElev : numElev,
             projectType: projectType
         }
     };
@@ -150,7 +152,12 @@ $(document).ready(function () {
             alert("Please enter a positive number!");
             $('#maxOcc').val('');
             return true
-        } else {
+        } else if ($('#numFloors').val() < 0){
+            alert("Please enter a postitive number!")
+            $('#maxOcc').val('');
+            return true
+        }
+         else {
             return false
         }
     };
@@ -181,10 +188,10 @@ $(document).ready(function () {
     function doCalc() {
         if ($('#residential').hasClass('active') && !negativeValues() && $('#numApp').val() && $('#numFloors').val()) {
             apiCall('residential')
-        } else if ($('#commercial').hasClass('active') && !negativeValues() && $('#numElev').val()  && $('#numPark').val()) {
+        } else if ($('#commercial').hasClass('active') && !negativeValues() && $('#numElev').val()) {
             apiCall('commercial')
         } else if ($('#corporate').hasClass('active') && !negativeValues() && $('#numFloors').val() && $('#numBase').val() && $('#maxOcc').val()) {
-            apiCall('commercial')
+            apiCall('corporate')
         } else {
             emptyElevatorsNumberAndPricesFields();
         };
