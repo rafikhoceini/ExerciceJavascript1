@@ -75,6 +75,7 @@ $(document).ready(function () {
 	}
 
 	function GetInfos() {
+		getInfoNumApp()
 		getInfoNumFloors()
 		getInfoNumBase()
 		getInfoNumElev()
