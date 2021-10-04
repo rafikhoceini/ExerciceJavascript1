@@ -118,6 +118,10 @@ $(document).ready(function () {
 			alert("Please enter a positive number!")
 			$("#numBase").val("")
 			return true
+		} else if ($("#numFloors").val() < 0) {
+			alert("Please enter a positive number!")
+			$("#numFloors").val("")
+			return true
 		} else if ($("#numComp").val() < 0) {
 			alert("Please enter a positive number!")
 			$("#numComp").val("")
