@@ -192,7 +192,11 @@ $(document).ready(function () {
             apiCall('commercial')
         } else if ($('#corporate').hasClass('active') && !negativeValues() && $('#numFloors').val() && $('#numBase').val() && $('#maxOcc').val()) {
             apiCall('corporate')
-        } else {
+        }
+        else if ($('#hybrid').hasClass('active') && !negativeValues() && $('#numFloors').val() && $('#numBase').val() && $('#maxOcc').val()){
+            apiCall('corporate')
+        }
+        else {
             emptyElevatorsNumberAndPricesFields();
         };
     };
