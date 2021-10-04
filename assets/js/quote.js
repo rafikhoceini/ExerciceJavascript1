@@ -94,6 +94,7 @@ $(document).ready(function () {
 
 	function emptyElevatorsNumberAndPricesFields() {
 		$("#numElev_3").val("")
+		$("#numElev_2").val("")
 		$(".priceField").val("")
 	}
 
