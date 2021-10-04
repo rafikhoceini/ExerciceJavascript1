@@ -13,7 +13,7 @@ $(document).ready(function () {
     });
 
 
-    $('#standart, #premium, #excelium').on('click', function () {
+    $('#standard, #premium, #excelium').on('click', function () {
         document.getElementById('elevPriceUnit').value = (7565).toFixed(2) + " $";
         doCalc();
     });
@@ -51,18 +51,21 @@ $(document).ready(function () {
     function getProdRange() {
         if ($('#standard').is(':checked')) {
             prodRange.type = "standard";
+            document.getElementById('elevPriceUnit').value = (7565).toFixed(2) + " $";
             prodRange.price = parseFloat(7565);
             prodRange.installationFeePercentage = 0.1;
             return prodRange;
 
         } else if ($('#premium').is(':checked')) {
             prodRange.type = "premium";
+            document.getElementById('elevPriceUnit').value = (12345).toFixed(2) + " $";
             prodRange.price = parseFloat(12345);
             prodRange.installationFeePercentage = 0.13;
             return prodRange;
 
         } else if ($('#excelium').is(':checked')) {
             prodRange.type = "excelium";
+            document.getElementById('elevPriceUnit').value = (15400).toFixed(2) + " $";
             prodRange.price = parseFloat(15400);
             prodRange.installationFeePercentage = 0.16;
             return prodRange;
