@@ -192,7 +192,7 @@ $(document).ready(function () {
 		) {
 			apiCall("commercial")
 		} else if (
-			$("#corporate").hasClass("active") &&
+			$("#corporate, #hybrid").hasClass("active") &&
 			!negativeValues() &&
 			$("#numFloors").val() &&
 			$("#numBase").val() &&
